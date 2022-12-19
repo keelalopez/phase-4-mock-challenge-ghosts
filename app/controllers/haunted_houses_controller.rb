@@ -1,0 +1,2 @@
+class HauntedHousesController < ApplicationController
+end
