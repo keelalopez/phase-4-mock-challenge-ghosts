@@ -26,14 +26,12 @@ ActiveRecord::Schema.define(version: 2022_12_19_195019) do
   end
 
   create_table "hauntings", force: :cascade do |t|
-    t.integer "ghost_id", null: false
-    t.integer "haunted_house_id", null: false
+    t.integer "ghost_id"
+    t.integer "haunted_house_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["ghost_id"], name: "index_hauntings_on_ghost_id"
     t.index ["haunted_house_id"], name: "index_hauntings_on_haunted_house_id"
   end
 
-  add_foreign_key "hauntings", "ghosts"
-  add_foreign_key "hauntings", "haunted_houses"
 end
