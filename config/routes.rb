@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   resources :hauntings, only: [:index, :create]
-  resources :haunted_houses, only: [:index]
   resources :ghosts, only: [:index, :show, :destroy]
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  # resources :haunted_houses, only: [:index]
+  get '/haunted-houses', to: 'haunted_houses#index'
+  # get '/haunted-houses', to: 'haunted_houses#index'
+  
 end

@@ -1,5 +1,5 @@
 class GhostShowSerializer < ActiveModel::Serializer
-  attributes :id, :address
+  attributes :id
 
-  has_many :hauntings
+  has_many :haunted_houses
 end
