@@ -2,13 +2,12 @@ class HauntedHouse < ApplicationRecord
     has_many :hauntings
     has_many :ghosts, through: :hauntings
 
-    # validates :address, 
+    validates :check_number
 
-    # def addres_check
-    #     test = self.address[0].to_i
-    #     if test !== 0
-    #         true
-    #     end
+    def check_number
+        if self.address[0].to_i == 0 
+            errors.add(:address, "must start with a number")
+       end
+    end
 
-    # end
 end
